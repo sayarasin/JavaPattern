@@ -1,6 +1,8 @@
 import Observer.Observer;
 import Observer.Subject;
-import Singleton.Singleton;
+import Singleton.*;
+
+
 
 /**
  * This is the main
@@ -28,6 +30,11 @@ public class Main {
         Singleton singleton2 = Singleton.getSingleton();
         System.out.println(singleton2.getValue());
 
+        SingletonEx singletonEx = SingletonEx.getSingletonEx();
+        System.out.println(singleton.getValue());
+        singletonEx.setValue(10);
+        System.out.println(singletonEx.getValue());
+        SingletonEx singletonEx2 = SingletonEx.getSingletonEx();
 
     }
 }

@@ -9,7 +9,7 @@ public class Singleton {
     private int _value = 0;
     private static Singleton _signleton = null;
 
-    private Singleton(){
+    private Singleton() {
 
     }
 
