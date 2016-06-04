@@ -35,6 +35,6 @@ public class Main {
         singletonEx.setValue(10);
         System.out.println(singletonEx.getValue());
         SingletonEx singletonEx2 = SingletonEx.getSingletonEx();
-
+        System.out.println(singletonEx2.getValue());
     }
 }
