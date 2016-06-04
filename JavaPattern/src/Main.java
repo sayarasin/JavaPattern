@@ -1,6 +1,9 @@
+import Decorate.ConcreteComponent;
+import Decorate.ConcreteDecorateEx_1;
 import Observer.Observer;
 import Observer.Subject;
 import Singleton.*;
+import Proxy.*;
 
 
 
@@ -25,16 +28,29 @@ public class Main {
         //Singleton
         Singleton singleton = Singleton.getSingleton();
         System.out.println(singleton.getValue());
-        singleton.setValue(10);
+        singleton.setValue(20);
         System.out.println(singleton.getValue());
         Singleton singleton2 = Singleton.getSingleton();
         System.out.println(singleton2.getValue());
 
         SingletonEx singletonEx = SingletonEx.getSingletonEx();
         System.out.println(singleton.getValue());
-        singletonEx.setValue(10);
+        singletonEx.setValue(20);
         System.out.println(singletonEx.getValue());
         SingletonEx singletonEx2 = SingletonEx.getSingletonEx();
         System.out.println(singletonEx2.getValue());
+
+        // Proxy
+        Proxy proxy = new Proxy();
+        proxy.doSomework();
+
+        // Decorate
+        ConcreteComponent component = new ConcreteComponent();
+        ConcreteDecorateEx_1 decorateEx_1 = new ConcreteDecorateEx_1();
+        decorateEx_1.dojob();
+        decorateEx_1.setComponent(component);
+        decorateEx_1.dojob();
+
+
     }
 }
