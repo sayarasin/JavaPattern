@@ -4,7 +4,8 @@ import Observer.Observer;
 import Observer.Subject;
 import Singleton.*;
 import Proxy.*;
-
+import TemplateMethod.ComputerScience;
+import TemplateMethod.Electronics;
 
 
 /**
@@ -51,6 +52,8 @@ public class Main {
         decorateEx_1.setComponent(component);
         decorateEx_1.dojob();
 
-
+        // Template method
+        new ComputerScience().papers();
+        new Electronics().papers();
     }
 }
