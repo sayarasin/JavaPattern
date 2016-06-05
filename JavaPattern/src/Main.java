@@ -4,8 +4,11 @@ import Observer.Observer;
 import Observer.Subject;
 import Singleton.*;
 import Proxy.*;
+import Strategy.Context;
+import Strategy.FirstChoice;
 import TemplateMethod.ComputerScience;
 import TemplateMethod.Electronics;
+
 
 
 /**
@@ -55,5 +58,10 @@ public class Main {
         // Template method
         new ComputerScience().papers();
         new Electronics().papers();
+
+        // Strategy
+        FirstChoice c1 = new FirstChoice();
+        Context context = new Context(c1);
+        context.ShowChoice("2", "1");
     }
 }
