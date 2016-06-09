@@ -8,7 +8,7 @@ public class ConcreteComponent extends Component{
 
     @Override
     public void dojob() {
-        System.out.println(" I am from Concrete Component-I am closed "
+        System.out.println("I am from Concrete Component-I am closed "
                 + "for modification.");
     }
 }
