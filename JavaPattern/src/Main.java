@@ -1,3 +1,5 @@
+import Adapter.CalculatorAdapter;
+import Adapter.Triangle;
 import Decorate.ConcreteComponent;
 import Decorate.ConcreteDecorateEx_1;
 import Observer.Observer;
@@ -63,5 +65,11 @@ public class Main {
         FirstChoice c1 = new FirstChoice();
         Context context = new Context(c1);
         context.ShowChoice("2", "1");
+
+        // Adapter
+        CalculatorAdapter cal=new CalculatorAdapter();
+        Triangle t = new Triangle(20,10);
+        System.out.println("\nAdapter Pattern Example\n");
+        System.out.println("Area of Triangle is :" + cal.getArea(t));
     }
 }
