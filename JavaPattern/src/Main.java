@@ -7,6 +7,9 @@ import Command.Receiver;
 import Decorate.ConcreteComponent;
 import Decorate.ConcreteDecorateEx_1;
 import Facade.RobotFacade;
+import Factory.ConcreteFactory;
+import Factory.IAnimal;
+import Factory.IAnimalFactory;
 import Iterator.Arts;
 import Iterator.IIterator;
 import Iterator.ISubject;
@@ -124,5 +127,19 @@ public class Main {
         RobotFacade facade2 = new RobotFacade();
         facade2.ConstructRobot("Red", "iron");
 
+        // Factory
+        System.out.println("\n\n***Factory Pattern Demo***\n");
+        IAnimalFactory animalFactory = new ConcreteFactory();
+        try {
+            IAnimal DuckType = animalFactory.GetAnimalType("Duck");
+            DuckType.Speak();
+            IAnimal TigerType = animalFactory.GetAnimalType("Tiger");
+            TigerType.Speak();
+            //There is no Lion type. So, an exception will be thrown
+            IAnimal LionType = animalFactory.GetAnimalType("Lion");
+            LionType.Speak();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
