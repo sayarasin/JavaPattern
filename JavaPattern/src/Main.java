@@ -14,6 +14,7 @@ import Iterator.Arts;
 import Iterator.IIterator;
 import Iterator.ISubject;
 import Iterator.Science;
+import Memento.Originator;
 import Observer.Observer;
 import Observer.Subject;
 import Singleton.*;
@@ -22,6 +23,9 @@ import Strategy.Context;
 import Strategy.FirstChoice;
 import TemplateMethod.ComputerScience;
 import TemplateMethod.Electronics;
+import Memento.Originator;
+import Memento.Memento;
+import Memento.Caretaker;
 
 
 
@@ -141,5 +145,27 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
+        /* Memento */
+        System.out.println("***Memento Pattern Demo***\n");
+        Originator o = new Originator();
+        o.setState("First state");
+
+        // Holding old state
+        Caretaker c = new Caretaker();
+        c.SaveMemento(o.OriginatorMemento());
+
+        // Change state
+        o.setState("Second state");
+
+        // Restore saved state
+        o.Revert(c.RetrieveMemento());
+
+
+
     }
+
+
+
 }
